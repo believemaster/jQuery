@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Characters Left</title>
+		<style media="screen">
+			#charNum{
+				border: 1px solid #DBDBDB;
+				border-radius: 3px;
+				padding: 2px;
+				font-size: 12px;
+				float: left;
+				marging-left: 4px;
+				marging-top: 8px;
+				visibility: hidden;
+			}
+			#char_left{
+				float: left;
+				font-family: Verdana;
+				font-size: 12px;
+				margin-top: 8px;
+				visibility: hidden;
+			}
+			#details{
+				border: 1px solid #333;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/d3js/5.7.0/d3.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(function(){
+				var maxLength = 100;
+				var show = false;
+				$('#details').focus(function(){
+					$(this).css('background','#dfffff')
+				}).blur(function(){
+					$(this).css('background','#fff');
+				});
+
+				$('#details').keyup(function(){
+					var textArea = $(this);
+					var len = textArea.val().length;
+					if(len >=0 && show ==false){
+						show = true;
+						$('#charNum').css('visibility','visible');
+						$('#char_left').css('visibility','visible');
+					}
+					if(len <= maxLength){
+						$('#charNum').text(maxLength - len);
+					}else{
+						textArea.val(textArea.val().substring(0,maxLength));
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<textarea id="details" rows="4" cols="23"></textarea><br>
+		<span id="char_left">Characters Left: </span><span id="charNum"></span>
+	</body>
+</html>

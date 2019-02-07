@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Animated Menu</title>
+		<style media="screen">
+			body{
+				width: 570px;
+				margin: 10px auto;
+				font-family: Helvetica;
+				font-size: 14px;
+				font-weight: bold;
+			}
+			.menu{
+				margin: 100px 0 0;
+				padding: 0;
+				list-style: none;
+			}
+			.menu li{
+				padding: 0;
+				margin: 0 2px;
+				float: left;
+				position: relative;
+				text-align: center;
+			}
+			.menu a{
+				width: 144px;
+				padding: 14px 10px;
+				display: block;
+				color: #002f54;
+				text-decoration: none;
+				background: url(images/button.png) no-repat center center;
+			}
+			.menu li em{
+				width: 180px;
+				height: 45px;
+				font-size: 13px;
+				font-weight: normal;
+				background: url(images/hover.png) no-repeat;
+				position: absolute;
+				top: -85px;
+				left: -15px;
+				text-align: center;
+				padding: 20px 12px 10px;
+				z-index: 2;
+				display: none;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/d3js/5.7.0/d3.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.menu a').append('<em></em>');
+				$('.menu a').hover(function(){
+					$(this).find("em").stop().animate({'opacity':'show','top':'-75'},"slow");
+					var hoverText = $(this).attr('title');
+					$(this).find('em').text(hoverText)
+				}, function(){
+					$(this).find("em").stop().animate({'opacity':'hide','top':'-85'},"fast");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<ul class="menu">
+			<li>
+				<a href="#" title="Go To Home">Home</a>
+			</li>
+			<li>
+				<a href="#" title="Go To Blog">Blog</a>
+			</li>
+			<li>
+				<a href="#" title="Go To About">About</a>
+			</li>
+		</ul>
+	</body>
+</html>

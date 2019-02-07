@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Star Rating</title>
+		<style media="screen">
+
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/d3js/5.7.0/d3.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			/*	$(function(){
+
+			}); or */
+			$(document).ready(function(){
+				var src;
+				var nameparts = new Array();
+				var filename = new Array();
+				$('img').hover(function(){
+				 src =	$(this).attr('src');
+				 nameparts = src.split('.');
+				 filename = nameparts[0].split('-');
+				 //filename[1]
+				 for(var i=1;i<=filename[1];i++){
+					 $('body img:nth-child('+i+')').attr('src','star-'+i+'-active.png');
+				 }
+				}, function(){
+					for(var i=1;i<=filename[1];i++){
+ 					 $('body img:nth-child('+i+')').attr('src','star-'+i+'.png');
+ 				 }
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<img src="star-1.png"><img src="star-2.png"><img src="star-3.png"><img src="star-4.png"><img src="star-5.png">
+	</body>
+</html>
