@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Slide Up,Slide Down on Click</title>
+		<style media="screen">
+			#curtainHandeler{
+				height: 35px;
+				width: 300px;
+				border-radius: 3px;
+				background-color: #007EBB;
+			}
+			#curtain{
+				height: 150px;
+				width: 300px;
+				border-radius: 3px;
+				background-color: #79D3FF;
+				box-shadow: 5px 5px 5px #CCCCCC;
+			}
+			#curtainHandeler img{
+				float: right;
+				margin-top: 9px;
+				margin-right: 5px;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/d3js/5.7.0/d3.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$(function(){
+				var curtainState = 1;
+				$('#curtainHandeler').click(function(){
+					if(curtainState == 1)
+					{
+						$('#curtain').slideUp(500);
+						$(this).children('img').attr('src','arrow-up.png');
+						curtainState = 0;
+					}else{
+						$('#curtain').slideDown(1500);
+						$(this).children('img').attr('src','arrow-down.png');
+						curtainState = 1;
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="curtainHandeler">
+			<img src="arrow-down.png">
+		</div>
+		<div id="curtain">
+
+		</div>
+	</body>
+</html>
