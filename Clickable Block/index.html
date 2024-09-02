@@ -1,72 +1,86 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-	<head>
-		<meta charset="utf-8">
-		<title>Clickable Block</title>
-		<style media="screen">
-			body{
-				margin: 10px auto;
-				width: 470px;
-			}
-			a{
-				color: #333300;
-				text-decoration: none;
-			}
-			a:visited{
-				color: #660099;
-			}
-			a:hover{
-				color: #808000;
-				text-decoration: underline;
-			}
-			h3{
-				margin: 0;
-				padding: 0 0 4px;
-			}
-			p{
-				margin: 0;
-				padding: 0 0 8px;
-			}
-			.pane-list{
-				margin: 0;
-				padding: 0;
-				list-style: none;
-			}
-			.pane-list li{
-				background: #ECFAD7;
-				padding: 10px 20px 10px;
-				border-top: solid 1px #c4df9b;
-				cursor: pointer;
-			}
-			.pane-list li:hover{
-				background: #f6ffe9;
-			}
-		</style>
-		<script src="https://ajax.googleapis.com/ajax/libs/d3js/5.7.0/d3.min.js"></script>
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<script type="text/javascript">
-			$(function(){
-				$('.pane-list li').click(function(){
-					window.location = $(this).find("a").attr("href");
-					return false;
-				});
-			});
-		</script>
-	</head>
-	<body>
-		<ul class="pane-list">
-			<li>
-				<h3><a href="www.believemaster.rf.gd">Believe Master First</a></h3>
-				<p>This is first template of believemaster website and this was complete html5+css and javascript and was made first.</p>
-			</li>
-			<li>
-				<h3>Believe Master Youtube</h3>
-				<p>This is Youtube channel of believe Master.<a href="www.youtube.com/believemaster">Click Here</a></p>
-			</li>
-			<li>
-				<h3>Learn More</h3>
-				<p>The best websit is <a href="www.ellusionist.com">Ellusionist.com</a></p>
-			</li>
-		</ul>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Clickable Block</title>
+    <style media="screen">
+      body {
+        margin: 10px auto;
+        width: 470px;
+      }
+      a {
+        color: #333300;
+        text-decoration: none;
+      }
+      a:visited {
+        color: #660099;
+      }
+      a:hover {
+        color: #808000;
+        text-decoration: underline;
+      }
+      h3 {
+        margin: 0;
+        padding: 0 0 4px;
+      }
+      p {
+        margin: 0;
+        padding: 0 0 8px;
+      }
+      .pane-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .pane-list li {
+        background: #ecfad7;
+        padding: 10px 20px 10px;
+        border-top: solid 1px #c4df9b;
+        cursor: pointer;
+      }
+      .pane-list li:hover {
+        background: #f6ffe9;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.7.0/d3.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $(function () {
+        $(".pane-list li").click(function () {
+          window.location = $(this).find("a").attr("href");
+          return false;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ul class="pane-list">
+      <li>
+        <h3><a href="www.believemaster.rf.gd">Believe Master First</a></h3>
+        <p>
+          This is first template of believemaster website and this was complete
+          html5+css and javascript and was made first.
+        </p>
+      </li>
+      <li>
+        <h3>Believe Master Youtube</h3>
+        <p>
+          This is Youtube channel of believe Master.<a
+            href="www.youtube.com/believemaster"
+            >Click Here</a
+          >
+        </p>
+      </li>
+      <li>
+        <h3>Learn More</h3>
+        <p>
+          The best website is <a href="www.ellusionist.com">Ellusionist.com</a>
+        </p>
+      </li>
+    </ul>
+  </body>
 </html>
